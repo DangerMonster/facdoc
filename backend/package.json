@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build:frontend": "cd ../frontend && npm install && npm run build && mkdir -p ../backend/frontend && cp -r build ../backend/frontend",
+    "postinstall": "npm run build:frontend",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

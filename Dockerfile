@@ -14,7 +14,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # 프로덕션 스테이지
-FROM node:18-alpine AS production
+FROM node:18 AS production
 
 # 보안을 위한 non-root 사용자 생성
 RUN addgroup -g 1001 -S nodejs
