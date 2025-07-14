@@ -26,7 +26,8 @@ WORKDIR /app
 # 백엔드 의존성 설치
 COPY backend/package*.json ./backend/
 WORKDIR /app/backend
-RUN npm ci --only=production
+RUN npm install --omit=dev
+
 
 # 백엔드 소스 코드 복사
 COPY backend/ ./
